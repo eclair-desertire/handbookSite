@@ -3,18 +3,20 @@ from django.db import models
 from django.utils import timezone
 
 COMPANY_TYPES_CHOICES=(
-    ("IS","Internet Shop"),
-    ("SM","SuperMarket"),
-    ("SP","Shopping center"),
-    ("FR","Furniture Shop"),
-    ("DF","DEFAULT")
+    ("Internet Shop","Internet Shop"),
+    ("SuperMarket","SuperMarket"),
+    ("Shopping center","Shopping center"),
+    ("Furniture Shop","Furniture Shop"),
+    ("IT Company","IT Company"),
+    ("Educational Center","Educational Center"),
+    ("DEFAULT","DEFAULT")
 )
 COMPANY_RATE_CHOICES=(
-    ("VB","1"),
-    ("R","2"),
-    ("G","3"),
-    ("B","4"),
-    ("D","5")
+    ("1","1"),
+    ("2","2"),
+    ("3","3"),
+    ("4","4"),
+    ("5","5")
 )
 
 
@@ -44,4 +46,4 @@ class Rate(models.Model):
         self.save()
 
     def __str__(self):
-        return self.company
+        return str(self.company)+":"+self.rate

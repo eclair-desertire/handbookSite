@@ -12,8 +12,8 @@
 <div class="bgded overlay" style="background-color: black;"> 
   <header id="header" class="hoc clear"> 
     <div id="logo" class="one_quarter first">
-      <h1><a href="#">Foxclore</a></h1>
-      <p>Placerat sem hendrerit</p>
+      <h1><a href="#">Handbook</a></h1>
+      <p>Information about companies</p>
     </div>
     <div class="three_quarter">
       <ul class="nospace clear">
@@ -35,58 +35,33 @@
     
     <nav id="mainav">
       <ul class="clear">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a class="drop" href="#">Pages</a>
+        <li class="active"><a href="{% url 'main_page' %}">Home</a></li>
+        <li><a class="drop" href="#">Categories</a>
           <ul>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Full Width</a></li>
-            <li><a href="#">Sidebar Left</a></li>
-            <li><a href="#">Sidebar Right</a></li>
-            <li><a href="#">Basic Grid</a></li>
-            <li><a href="#">Font Icons</a></li>
+            <li><a href="{% url 'ishop' %}">Internet Shop</a></li>
+            <li><a href="{% url 'smarket' %}">SuperMarket</a></li>
+            <li><a href="{% url 'shopping'%}">Shopping center</a></li>
+            <li><a href="{% url 'fshop' %}">Furniture Shop</a></li>
+            <li><a href="{% url 'icompany' %}">IT Company</a></li>
+            <li><a href="{% url 'edu' %}">Educational center</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Long Link Text</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
       </ul>
     </nav>
     
-    <div id="searchform">
-      <div>
-        <form action="#" method="post">
-          <fieldset>
-            <legend>Quick Search:</legend>
-            <input type="text" placeholder="Enter search term&hellip;">
-            <button type="submit"><i class="fas fa-search"></i></button>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+
     
   </section>
 
   <div id="pageintro" class="hoc clear"> 
    
     <article>
-      <p>Aliquam sapien</p>
-      <h3 class="heading">Magna feugiat pulvinar</h3>
-      <p>At dapibus ac velit cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus maecenas ut</p>
-      <footer><a class="btn" href="#">Laoreet pharetra</a></footer>
+      <p>Welcome to handbook site!</p>
+      <h3 class="heading">INFO ABOUT COMPANIES</h3>
+      <p>Our site will provide you all required information about some companies</p>
+      <footer><a class="btn" href="#introblocks">go to categories</a></footer>
     </article>
     
   </div>
@@ -99,50 +74,44 @@
     <section id="introblocks">
       <ul class="nospace group">
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'ishop'%}"><img src="{% static 'img/internetshop.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Internet Shop</h6>
-              <p>Ipsum eu ipsum donec ac orci sed lectus elementum fringilla nullam dictum nisi nec mauris phasellus ut lacus.</p>
             </figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'smarket' %}"><img src="{% static 'img/supermarket.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">SuperMarket</h6>
-              <p>Vel nisi semper adipiscing maecenas sodales elit cras porttitor diam aliquam turpis quisque rhoncus tincidunt.</p>
             </figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'shopping'%}"><img src="{% static 'img/shopping.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Shopping Center</h6>
-              <p>Arcu ut auctor nunc ac mi vivamus aliquam maecenas in lorem vel tellus porttitor placerat quisque tellus nulla.</p>
             </figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'fshop' %}"><img src="{% static 'img/furniture.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Furniture Shop</h6>
-              <p>Facilisis et mattis id consectetuer vel nunc donec sagittis purus sit amet est pellentesque elit dolor mattis.</p>
             </figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'icompany' %}"><img src="{% static 'img/itcompany.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">IT Company</h6>
-              <p>Ac lobortis sed cursus at magna vivamus laoreet orci vel tortor in nisi in porttitor vulputate arcu integer.</p>
             </figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="{% static 'img/demo/348x220.png' %}" alt=""></a>
+          <figure><a class="imgover" href="{% url 'edu' %}"><img src="{% static 'img/education.png' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Educational Center</h6>
-              <p>Pretium curabitur lacinia aenean eu lectus maecenas at urna morbi porta est a mi duis felis nunc lobortis ut.</p>
             </figcaption>
           </figure>
         </li>
@@ -158,7 +127,7 @@
   <footer id="footer" class="hoc clear"> 
     
     <div class="center btmspace-50">
-      <h6 class="heading">Foxclore</h6>
+      <h6 class="heading">Handbook</h6>
       <ul class="faico clear">
         <li><a class="faicon-dribble" href="#"><i class="fab fa-dribbble"></i></a></li>
         <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
@@ -167,64 +136,30 @@
         <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
         <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
       </ul>
-      <p class="nospace">Sed pellentesque in nisi nulla facilisi sed pretium duis varius ut ut.</p>
     </div>
     
     <hr class="btmspace-50">
     
-    <div class="one_quarter first">
-      <h6 class="heading">Nunc neque pellentesque</h6>
-      <p class="nospace btmspace-15">Interdum velit vitae pede aliquam mollis neque ut ullamcorper tempor dolor.</p>
-      <form action="#" method="post">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
+    <div class="div_flex" style="display: flex; justify-content: space-between;">
+      <div class="one_quarter first">
+        <h6 class="heading">Contact us</h6>
+        <p class="nospace btmspace-15">If you want to add some information or join our team, please leave us your email</p>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Newsletter:</legend>
+            <input class="btmspace-15" type="text" value="" placeholder="Name">
+            <input class="btmspace-15" type="text" value="" placeholder="Email">
+            <button type="submit" value="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+
+      <div class="one_quarter">
+        <h6 class="heading">Where our team located?</h6>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1884.8271701521287!2d76.91027737383226!3d43.23463584210306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3883692f027581ad%3A0x2426740f56437e63!2z0JzQtdC20LTRg9C90LDRgNC-0LTQvdGL0Lkg0YPQvdC40LLQtdGA0YHQuNGC0LXRgiDQuNC90YTQvtGA0LzQsNGG0LjQvtC90L3Ri9GFINGC0LXRhdC90L7Qu9C-0LPQuNC5!5e0!3m2!1sru!2skz!4v1639848603565!5m2!1sru!2skz" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
-    <div class="one_quarter">
-      <h6 class="heading">Tortor varius nisi</h6>
-      <ul class="nospace linklist">
-        <li>
-          <article>
-            <p class="nospace btmspace-10"><a href="#">Id euismod est risus ac neque aliquam erat volutpat pellentesque adipiscing.</a></p>
-            <time class="block font-xs" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p class="nospace btmspace-10"><a href="#">Nunc hendrerit adipiscing nulla donec vestibulum odio quisque gravida morbi.</a></p>
-            <time class="block font-xs" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Vel condimentum auctor</h6>
-      <ul class="nospace linklist">
-        <li><a href="#">Hendrerit id lacus praesent</a></li>
-        <li><a href="#">Ullamcorper risus gravida</a></li>
-        <li><a href="#">Suscipit tempor turpis</a></li>
-        <li><a href="#">Pede dictum ipsum vel auctor</a></li>
-        <li><a href="#">Leo est tincidunt est sed</a></li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Nunc sapien varius</h6>
-      <ul class="nospace clear latestimg">
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-        <li><a class="imgover" href="#"><img src="{% static 'img/demo/100x100.png' %}" alt=""></a></li>
-      </ul>
-    </div>
+
     
   </footer>
 </div>
@@ -233,7 +168,7 @@
   <div id="copyright" class="hoc clear"> 
     
     <p class="fl_left">Copyright &copy; 2021 - Rights not reserved</p>
-    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">Team Alisher Ruziyev, Assylov Arystan</a></p>
+    <p class="fl_right">Team Alisher Ruziyev, Assylov Arystan</p>
     
   </div>
 </div>

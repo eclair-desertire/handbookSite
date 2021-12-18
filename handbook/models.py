@@ -27,7 +27,7 @@ class Company(models.Model):
     company_phone=models.CharField(max_length=30,blank=True)
     comapny_category=models.CharField(max_length=40,choices=COMPANY_TYPES_CHOICES,default="DF")
     company_email=models.EmailField(blank=True)
-    company_logo=models.ImageField(blank=True)
+    company_logo=models.ImageField(blank=True,upload_to='logos/')
     published_date=models.DateTimeField(blank=True, null=True)
 
     def publish(self):

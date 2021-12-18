@@ -42,15 +42,15 @@
     
     <nav id="mainav">
       <ul class="clear">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="{% url 'main_page' %}">Home</a></li>
         <li><a class="drop" href="#">Categories</a>
           <ul>
-            <li><a href="#">Internet Shop</a></li>
-            <li><a href="#">SuperMarket</a></li>
-            <li><a href="#">Shopping center</a></li>
-            <li><a href="#">Furniture Shop</a></li>
-            <li><a href="#">IT Company</a></li>
-            <li><a href="#">Educational center</a></li>
+            <li><a href="{% url 'ishop' %}">Internet Shop</a></li>
+            <li><a href="{% url 'smarket' %}">SuperMarket</a></li>
+            <li><a href="{% url 'shopping'%}">Shopping center</a></li>
+            <li><a href="{% url 'fshop' %}">Furniture Shop</a></li>
+            <li><a href="{% url 'icompany' %}">IT Company</a></li>
+            <li><a href="{% url 'edu' %}">Educational center</a></li>
           </ul>
         </li>
         <li><a href="#">Login</a></li>

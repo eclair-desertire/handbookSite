@@ -60,7 +60,7 @@ def fshop(request):
 
 def icompany(request):
     icomps=Company.objects.filter(comapny_category='IT Company')
-    return render(request,'handbook/icompany.html',{'icomps':icomps})
+    return render(request,'handbook/icomp.html',{'icomps':icomps})
 
 def edu(request):
     edus=Company.objects.filter(comapny_category='Educational Center')

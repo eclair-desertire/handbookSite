@@ -9,4 +9,5 @@ urlpatterns = [
     path('catalog/fshop',views.fshop,name='fshop'),
     path('catalog/icompany',views.icompany,name='icompany'),
     path('catalog/edu',views.edu,name='edu'),
+    path('catalog/<int:pk>',views.company_detail,name='company_detail'),
 ]

@@ -29,6 +29,8 @@ class Company(models.Model):
     company_logo=models.ImageField(blank=True,upload_to='logos/')
     published_date=models.DateTimeField(blank=True, null=True)
 
+    def get_media_url(self):
+        return self.company_logo.url.replace('media/','')
     def publish(self):
         self.published_date=timezone.now()
         self.save()

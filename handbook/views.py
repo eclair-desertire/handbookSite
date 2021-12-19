@@ -1,5 +1,43 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from .models import *
+
+from .forms import *
+ 
+
+def addnewcomp(request):
+    if request.method=='POST':
+        form=CompForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main_page')
+    else:
+        form=CompForm()
+    return render(request,'handbook/newcompform.html',{'form':form})
+
+def register(request):
+
+    data = {}
+
+    if request.method == 'POST':
+ 
+        form = RegistrForm(request.POST)
+
+        if form.is_valid():
+
+            form.save()
+
+            data['form'] = form
+
+            data['res'] = "Всё прошло успешно"
+ 
+            return render(request, 'handbook/main_page.html', data)
+    else: 
+
+        form = RegistrForm()
+
+        data['form'] = form
+
+        return render(request, 'handbook/register.html', data)
 
 def main_page(request):
     return render(request,'handbook/main_page.html',{})

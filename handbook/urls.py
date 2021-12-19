@@ -10,4 +10,6 @@ urlpatterns = [
     path('catalog/icompany',views.icompany,name='icompany'),
     path('catalog/edu',views.edu,name='edu'),
     path('catalog/<int:pk>',views.company_detail,name='company_detail'),
+    path('register',views.register,name='register'),
+    path('addnew',views.addnewcomp,name='addnew'),
 ]

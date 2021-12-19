@@ -8,8 +8,7 @@ COMPANY_TYPES_CHOICES=(
     ("Shopping center","Shopping center"),
     ("Furniture Shop","Furniture Shop"),
     ("IT Company","IT Company"),
-    ("Educational Center","Educational Center"),
-    ("DEFAULT","DEFAULT")
+    ("Educational Center","Educational Center")
 )
 COMPANY_RATE_CHOICES=(
     ("1","1"),
@@ -25,7 +24,7 @@ class Company(models.Model):
     company_name=models.CharField(max_length=40,blank=True)
     company_about=models.TextField(blank=True)
     company_phone=models.CharField(max_length=30,blank=True)
-    comapny_category=models.CharField(max_length=40,choices=COMPANY_TYPES_CHOICES,default="DF")
+    comapny_category=models.CharField(max_length=40,choices=COMPANY_TYPES_CHOICES,blank=True)
     company_email=models.EmailField(blank=True)
     company_logo=models.ImageField(blank=True,upload_to='logos/')
     published_date=models.DateTimeField(blank=True, null=True)

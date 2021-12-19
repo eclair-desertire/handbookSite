@@ -68,6 +68,6 @@ def edu(request):
 
 def company_detail(request,pk):
     Fcompany=get_object_or_404(Company,pk=pk)
-    rate=Rate.objects.filter(company=Fcompany)
-    return render(request,'handbook/details.html',{'company':Fcompany,'rate':rate})
+    rate=Rate.objects.get(company=Fcompany)
+    return render(request,'handbook/details.html',{'company':Fcompany,'rating':rate})
 # Create your views here.

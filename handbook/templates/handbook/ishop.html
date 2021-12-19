@@ -46,8 +46,14 @@
             <li><a href="{% url 'edu' %}">Educational center</a></li>
           </ul>
         </li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign Up</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="#">Hello :{{ user.get_username }}</a></li>
+          <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+          <li><a href="{% url 'addnew' %}" style="border: 2px solid green;">Add new company to handbook</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+        <li><a href="{% url 'register' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
     

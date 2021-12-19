@@ -46,8 +46,14 @@
             <li><a href="{% url 'edu' %}">Educational center</a></li>
           </ul>
         </li>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign Up</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="#">Hello :{{ user.get_username }}</a></li>
+          <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+          <li><a href="{% url 'addnew' %}" style="border: 2px solid green;">Add new company to handbook</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}?next={{request.path}}">Login</a></li>
+        <li><a href="{% url 'register' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </nav>
     
@@ -70,9 +76,19 @@
    
     <div class="content"> 
     
-      <div id="gallery">
-          <img src="{{company.company_logo.url}}" alt="">
-          <h1>{{rate}}</h1>
+      <div id="gallery" style="display: flex; justify-content: space-between;">
+          <div class="photo">
+            <img src="{{company.company_logo.url}}" alt="">
+          </div>
+          <div class="infonrate" style="margin-left: 20px;">
+            <h1>{{company.company_name}}</h1>
+            <p>{{company.company_about}}</p>
+            <h2>Contacts: {{company.company_phone}}</h2>
+            <h2>Email: {{company.company_email}}</h2>
+            
+            <h3>Company rating: {{rating.rate}}</h3>
+          </div>
+
       </div>
      
     </div>

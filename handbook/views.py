@@ -4,6 +4,18 @@ from .models import *
 from .forms import *
  
 
+def editcompany(request,pk):
+    company=get_object_or_404(Company,pk)
+    if request.method=='POST':
+        form=CompForm(request.POST,request.FILES,instance=company)
+        if form.is_valid():
+            form.save()
+            return redirect('main_page')
+    else:
+        form=CompForm(instance=company)
+    return render(request,'handbook/comp_edit.html',{'form':form})
+
+
 def addnewcomp(request):
     if request.method=='POST':
         form=CompForm(request.POST,request.FILES)

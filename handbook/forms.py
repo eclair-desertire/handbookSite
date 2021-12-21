@@ -19,6 +19,7 @@ class RegistrForm(UserCreationForm):
     fields = ('username', 'email', 'password1', 'password2', )
 
 class CompForm(forms.ModelForm):
+  
   class Meta:
     model=Company
     fields=('company_name','company_about','comapny_category','company_email','company_phone','company_logo',)

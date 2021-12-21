@@ -6,7 +6,7 @@ from .forms import *
 
 def addnewcomp(request):
     if request.method=='POST':
-        form=CompForm(request.POST)
+        form=CompForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('main_page')
